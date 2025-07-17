@@ -1,295 +1,82 @@
-* {
+body {
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    color: #e0e0e0;
-    background: #000;
-    overflow-x: hidden;
-    position: relative;
-}
-
-/* Космический фон */
-.stars {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="100" cy="100" r="1" fill="white"/><circle cx="200" cy="300" r="0.5" fill="white"/><circle cx="300" cy="150" r="1.5" fill="white"/><circle cx="450" cy="250" r="0.8" fill="white"/><circle cx="600" cy="400" r="1" fill="white"/><circle cx="750" cy="100" r="0.7" fill="white"/><circle cx="850" cy="350" r="1.2" fill="white"/><circle cx="150" cy="500" r="0.9" fill="white"/><circle cx="400" cy="600" r="1.1" fill="white"/><circle cx="700" cy="700" r="0.6" fill="white"/><circle cx="900" cy="800" r="1.3" fill="white"/><circle cx="50" cy="750" r="0.8" fill="white"/><circle cx="350" cy="850" r="1" fill="white"/><circle cx="550" cy="50" r="0.9" fill="white"/><circle cx="800" cy="200" r="1.1" fill="white"/></svg>') repeat;
-    z-index: -2;
-    animation: twinkle 4s ease-in-out infinite alternate;
-}
-
-.nebula {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(ellipse at 30% 20%, rgba(138, 43, 226, 0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at 70% 80%, rgba(0, 100, 200, 0.1) 0%, transparent 50%);
-    z-index: -1;
-}
-
-@keyframes twinkle {
-    0% { opacity: 0.5; }
-    100% { opacity: 1; }
+    background-color: #f5f5f5;
+    color: #333;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 20px;
 }
 
 header {
-    background: linear-gradient(135deg, rgba(20, 20, 50, 0.9) 0%, rgba(10, 10, 30, 0.9) 100%);
-    backdrop-filter: blur(10px);
+    background-color: #007bff;
     color: white;
-    padding: 60px 0;
     text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 50px 0;
 }
 
-header h1 {
-    font-family: 'Orbitron', monospace;
-    font-size: 3rem;
-    font-weight: 900;
+h1 {
+    font-size: 2.5em;
     margin-bottom: 10px;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
 .tagline {
-    font-size: 1.2rem;
-    opacity: 0.9;
-    font-weight: 300;
+    font-size: 1.2em;
 }
 
-nav {
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(5px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
-}
-
-nav li {
-    margin: 0 30px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #e0e0e0;
-    font-weight: 500;
-    transition: color 0.3s;
-    font-family: 'Orbitron', monospace;
-}
-
-nav a:hover {
-    color: #00ff88;
-    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
-}
-
-main {
-    padding: 60px 0;
-}
-
-section {
-    margin-bottom: 80px;
-    background: rgba(20, 20, 40, 0.3);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 40px;
+.services, .cases, .clients, .form-section {
+    padding: 50px 0;
 }
 
 h2 {
-    font-family: 'Orbitron', monospace;
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #00ff88;
     text-align: center;
-    text-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+    margin-bottom: 30px;
+    font-size: 2em;
 }
 
-h3 {
-    font-family: 'Orbitron', monospace;
-    font-size: 1.5rem;
-    margin: 30px 0 20px;
-    color: #ffffff;
-}
-
-p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    text-align: justify;
-    color: #cccccc;
-}
-
-.mission-goals ul {
+.service-grid, .testimonial-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
+    gap: 20px;
 }
 
-.mission-goals li {
-    background: rgba(0, 255, 136, 0.1);
-    padding: 15px;
+.service-item, .testimonial {
+    background: white;
+    padding: 20px;
     border-radius: 8px;
-    border: 1px solid rgba(0, 255, 136, 0.3);
-    list-style: none;
-    color: #e0e0e0;
-}
-
-/* Часы судного дня */
-.doomsday-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-    flex-wrap: wrap;
-}
-
-.clock-face {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    border: 3px solid #ff4444;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 68, 68, 0.1) 0%, transparent 70%);
-    box-shadow: 0 0 30px rgba(255, 68, 68, 0.3);
-}
-
-.clock-hand {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 2px;
-    height: 80px;
-    background: #ff4444;
-    transform-origin: bottom;
-    transform: translate(-50%, -100%) rotate(350deg);
-    box-shadow: 0 0 10px rgba(255, 68, 68, 0.8);
-}
-
-.clock-numbers {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.twelve {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: 'Orbitron', monospace;
-    font-weight: 700;
-    color: #ff4444;
-    font-size: 1.5rem;
-}
-
-.six {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: 'Orbitron', monospace;
-    font-weight: 700;
-    color: #ff4444;
-    font-size: 1.5rem;
-}
-
-.clock-info {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     text-align: center;
 }
 
-#doomsday-display {
-    font-family: 'Orbitron', monospace;
-    font-size: 2rem;
-    color: #ff4444;
-    text-shadow: 0 0 15px rgba(255, 68, 68, 0.5);
-}
-
-.clock-description {
-    color: #aaa;
-    font-size: 0.9rem;
-    margin-top: 10px;
-}
-
-/* Мировое время */
-.time-zones {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.time-zone {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    text-align: center;
-}
-
-.time-zone h4 {
-    font-family: 'Orbitron', monospace;
-    color: #00ff88;
-    margin-bottom: 10px;
-}
-
-.time-display {
-    font-family: 'Orbitron', monospace;
-    font-size: 1.8rem;
-    color: #ffffff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-}
-
-/* Мониторинг */
-.monitoring-panel {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-.chart-container {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.chart-container h3 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.2rem;
-}
-
-.chart-legend {
+form {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-top: 15px;
-    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.legend-item {
-    display: flex;
-    align-items: center;
-    gap:
+input[type="email"] {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
