@@ -1,168 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EastsWay Observatory - Global Monitoring Station</title>
+    <title>EastsWay Solutions - Разработка ПО на заказ</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="stars"></div>
-    <div class="nebula"></div>
-    
     <header>
         <div class="container">
-            <h1>EastsWay Observatory</h1>
-            <p class="tagline">Global Monitoring & Research Station</p>
+            <h1>EastsWay Solutions</h1>
+            <p class="tagline">Разработка ПО на заказ и контроль качества</p>
         </div>
     </header>
     
-    <nav>
+    <section class="services">
         <div class="container">
-            <ul>
-                <li><a href="#about">Mission</a></li>
-                <li><a href="#doomsday">Doomsday Clock</a></li>
-                <li><a href="#worldtime">World Time</a></li>
-                <li><a href="#monitoring">Monitoring</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <h2>Наши услуги</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <h3>Разработка на заказ</h3>
+                    <p>Создаем уникальные решения, адаптированные под ваши бизнес-процессы и требования.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Контроль качества</h3>
+                    <p>Передовые методы и инструменты для обеспечения безупречной работы ПО.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Технологические возможности</h3>
+                    <p>Код любой сложности, цифровая трансформация и автоматизация процессов.</p>
+                </div>
+            </div>
         </div>
-    </nav>
+    </section>
     
-    <main class="container">
-        <section id="about">
-            <h2>Observatory Mission</h2>
-            <p>EastsWay Observatory is a specialized monitoring station dedicated to tracking 
-               global phenomena and maintaining continuous surveillance of critical indicators 
-               that affect humanity's future. Our mission is to provide real-time analysis 
-               and early warning systems for various global threats and anomalies.</p>
-            
-            <div class="mission-goals">
-                <h3>Primary Objectives</h3>
-                <ul>
-                    <li>Continuous monitoring of global communication patterns</li>
-                    <li>Analysis of international tension levels</li>
-                    <li>Tracking of anomalous signal patterns</li>
-                    <li>Maintenance of temporal synchronization systems</li>
-                    <li>Documentation of critical threshold breaches</li>
-                </ul>
-            </div>
-        </section>
-        
-        <section id="doomsday">
-            <h2>Doomsday Clock</h2>
-            <div class="doomsday-container">
-                <div class="clock-face">
-                    <div class="clock-hand" id="doomsday-hand"></div>
-                    <div class="clock-numbers">
-                        <span class="twelve">12</span>
-                        <span class="six">6</span>
-                    </div>
+    <section class="cases">
+        <div class="container">
+            <h2>Наши кейсы</h2>
+            <p>Мы реализовали более 3700 проектов с реальными результатами, сотрудничая с 100+ организациями.</p>
+            <p>Аккредитованы в IT, владеем 100+ технологиями для различных отраслей.</p>
+        </div>
+    </section>
+    
+    <section class="clients">
+        <div class="container">
+            <h2>Что говорят клиенты</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p>"Разработанная аналитическая система используется ежедневно более 250 людьми для мониторинга и планирования."</p>
                 </div>
-                <div class="clock-info">
-                    <p id="doomsday-time">Current Time: <span id="doomsday-display">23:58:20</span></p>
-                    <p class="clock-description">Minutes to midnight represent global catastrophe risk</p>
+                <div class="testimonial">
+                    <p>"Внедрение портала стало важным шагом в развитии."</p>
+                </div>
+                <div class="testimonial">
+                    <p>"Мы нашли надежного партнера с качественной реализацией в срок."</p>
                 </div>
             </div>
-        </section>
-        
-        <section id="worldtime">
-            <h2>Global Time Synchronization</h2>
-            <div class="time-zones">
-                <div class="time-zone">
-                    <h4>Greenwich Mean Time</h4>
-                    <div class="time-display" id="gmt-time">--:--:--</div>
-                </div>
-                <div class="time-zone">
-                    <h4>Moscow Time</h4>
-                    <div class="time-display" id="moscow-time">--:--:--</div>
-                </div>
-                <div class="time-zone">
-                    <h4>Washington DC</h4>
-                    <div class="time-display" id="washington-time">--:--:--</div>
-                </div>
-                <div class="time-zone">
-                    <h4>Beijing Time</h4>
-                    <div class="time-display" id="beijing-time">--:--:--</div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="monitoring">
-            <h2>Real-Time Monitoring Systems</h2>
-            
-            <div class="monitoring-panel">
-                <div class="chart-container">
-                    <h3>Radio Communication Levels</h3>
-                    <canvas id="radioChart" width="400" height="200"></canvas>
-                    <div class="chart-legend">
-                        <span class="legend-item">
-                            <span class="legend-color" style="background: #00ff88;"></span>
-                            Normal Range
-                        </span>
-                        <span class="legend-item">
-                            <span class="legend-color" style="background: #ffaa00;"></span>
-                            Elevated
-                        </span>
-                        <span class="legend-item">
-                            <span class="legend-color" style="background: #ff4444;"></span>
-                            Critical
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="chart-container">
-                    <h3>Global Tension Index</h3>
-                    <canvas id="tensionChart" width="400" height="200"></canvas>
-                    <div class="chart-legend">
-                        <span class="legend-item">
-                            <span class="legend-color" style="background: #4488ff;"></span>
-                            Stability Level
-                        </span>
-                        <span class="legend-item">
-                            <span class="legend-color" style="background: #ff8844;"></span>
-                            Tension Spikes
-                        </span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="status-indicators">
-                <div class="indicator">
-                    <div class="indicator-light" id="radio-status"></div>
-                    <span>Radio Monitoring</span>
-                </div>
-                <div class="indicator">
-                    <div class="indicator-light" id="tension-status"></div>
-                    <span>Tension Analysis</span>
-                </div>
-                <div class="indicator">
-                    <div class="indicator-light active" id="system-status"></div>
-                    <span>System Status</span>
-                </div>
-            </div>
-        </section>
-        
-        <section id="contact">
-            <h2>Observatory Contact</h2>
-            <div class="contact-info">
-                <p><strong>Station ID:</strong> EAST-001</p>
-                <p><strong>Primary Contact:</strong> station@eastsway.org</p>
-                <p><strong>Classification:</strong> Monitoring Station - Level 3</p>
-                <p><strong>Operational Status:</strong> 24/7 Continuous Monitoring</p>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
+    
+    <section class="form-section">
+        <div class="container">
+            <h2>Подписаться на обновления</h2>
+            <form>
+                <input type="email" placeholder="Введите ваш email" required>
+                <button type="submit">Подписаться</button>
+            </form>
+        </div>
+    </section>
     
     <footer>
         <div class="container">
-            <p>&copy; 2025 EastsWay Observatory. Monitoring protocols active.</p>
+            <p>&copy; 2025 EastsWay Solutions. Все права защищены.</p>
         </div>
     </footer>
-    
-    <script src="assets/js/main.js"></script>
 </body>
 </html>
