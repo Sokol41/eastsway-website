@@ -207,3 +207,97 @@ class Chart {
     }
     
     updateIndicators() {
+        const lastValue = this.data[this.data.length - 1];
+        
+        if (this.canvas.id === 'radioChart') {
+            const indicator = document.getElementById('radio-status');
+            if (lastValue > 70) {
+                indicator.style.background = '#ff4444';
+                indicator.style.boxShadow = '0 0 15px rgba(255, 68, 68, 0.8)';
+            } else if (lastValue > 40) {
+                indicator.style.background = '#ffaa00';
+                indicator.style.boxShadow = '0 0 15px rgba(255, 170, 0, 0.8)';
+            } else {
+                indicator.style.background = '#00ff88';
+                indicator.style.boxShadow = '0 0 15px rgba(0, 255, 136, 0.8)';
+            }
+        } else {
+            const indicator = document.getElementById('tension-status');
+            if (lastValue > 60) {
+                indicator.style.background = '#ff8844';
+                indicator.style.boxShadow = '0 0 15px rgba(255, 136, 68, 0.8)';
+            } else {
+                indicator.style.background = '#4488ff';
+                indicator.style.boxShadow = '0 0 15px rgba(68, 136, 255, 0.8)';
+            }
+        }
+    }
+}
+
+// Плавная навигация
+function setupNavigation() {
+    const links = document.querySelectorAll('nav a[href^="#"]');
+    
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+}
+
+// Запуск обновлений в реальном времени
+function startRealTimeUpdates() {
+    // Случайные изменения статуса индикаторов
+    setInterval(() => {
+        const systemStatus = document.getElementById('system-status');
+        if (Math.random() < 0.1) {
+            systemStatus.classList.toggle('active');
+            setTimeout(() => {
+                systemStatus.classList.add('active');
+            }, 100);
+        }
+    }, 2000);
+    
+    // Случайные мерцания элементов
+    setInterval(() => {
+        const elements = document.querySelectorAll('.time-display, #doomsday-display');
+        elements.forEach(element => {
+            if (Math.random() < 0.05) {
+                element.style.textShadow = '0 0 20px currentColor';
+                setTimeout(() => {
+                    element.style.textShadow = '0 0 10px rgba(255, 255, 255, 0.3)';
+                }, 100);
+            }
+        });
+    }, 500);
+}
+
+// Функция для случайного изменения значений прогресса (если нужно)
+function updateRandomProgress() {
+    const progressBars = document.querySelectorAll('.progress-fill');
+    
+    progressBars.forEach(bar => {
+        const currentWidth = parseInt(bar.style.width);
+        const change = (Math.random() - 0.5) * 10;
+        let newWidth = currentWidth + change;
+        
+        newWidth = Math.max(0, Math.min(100, newWidth));
+        bar.style.width = newWidth + '%';
+        
+        // Обновляем текст
+        const progressText = bar.parentElement.nextElementSibling;
+        if (progressText && progressText.classList.contains('progress-text')) {
+            progressText.textContent = Math.round(newWidth) + '%';
+        }
+    });
+}
+
+// Запускаем обновления прогресса каждые 30 секунд
+setInterval(updateRandomProgress, 30000);
