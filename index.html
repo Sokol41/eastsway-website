@@ -20,16 +20,39 @@
             <h2>Наши услуги</h2>
             <div class="service-grid">
                 <div class="service-item">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
                     <h3>Разработка на заказ</h3>
                     <p>Создаем уникальные решения, адаптированные под ваши бизнес-процессы и требования.</p>
                 </div>
                 <div class="service-item">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
                     <h3>Контроль качества</h3>
                     <p>Передовые методы и инструменты для обеспечения безупречной работы ПО.</p>
                 </div>
                 <div class="service-item">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
                     <h3>Технологические возможности</h3>
                     <p>Код любой сложности, цифровая трансформация и автоматизация процессов.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="advantages">
+        <div class="container">
+            <h2>Наши преимущества</h2>
+            <div class="advantage-grid">
+                <div class="advantage-item">
+                    <h3>Инновации</h3>
+                    <p>Используем современные технологии для оптимальных решений.</p>
+                </div>
+                <div class="advantage-item">
+                    <h3>Надежность</h3>
+                    <p>Гарантируем качество и соблюдение сроков.</p>
+                </div>
+                <div class="advantage-item">
+                    <h3>Гибкость</h3>
+                    <p>Адаптируемся под любые бизнес-потребности.</p>
                 </div>
             </div>
         </div>
@@ -40,6 +63,13 @@
             <h2>Наши кейсы</h2>
             <p>Мы реализовали более 3700 проектов с реальными результатами, сотрудничая с 100+ организациями.</p>
             <p>Аккредитованы в IT, владеем 100+ технологиями для различных отраслей.</p>
+        </div>
+    </section>
+    
+    <section class="team">
+        <div class="container">
+            <h2>Наша команда</h2>
+            <p>Опытные специалисты с экспертизой в разработке и тестировании ПО.</p>
         </div>
     </section>
     
@@ -62,10 +92,12 @@
     
     <section class="form-section">
         <div class="container">
-            <h2>Подписаться на обновления</h2>
-            <form>
-                <input type="email" placeholder="Введите ваш email" required>
-                <button type="submit">Подписаться</button>
+            <h2>Обратная связь</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="email" placeholder="Ваш email" required>
+                <textarea placeholder="Ваше сообщение" required></textarea>
+                <button type="submit">Отправить</button>
             </form>
         </div>
     </section>
@@ -75,5 +107,13 @@
             <p>&copy; 2025 EastsWay Solutions. Все права защищены.</p>
         </div>
     </footer>
+    
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
