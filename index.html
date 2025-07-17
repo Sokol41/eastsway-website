@@ -3,26 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EastsWay Solutions - IT Infrastructure & Network Consulting</title>
+    <title>EastsWay Observatory - Global Monitoring Station</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="stars"></div>
+    <div class="nebula"></div>
+    
     <header>
         <div class="container">
-            <h1>EastsWay Solutions</h1>
-            <p class="tagline">IT Infrastructure & Network Consulting</p>
+            <h1>EastsWay Observatory</h1>
+            <p class="tagline">Global Monitoring & Research Station</p>
         </div>
     </header>
     
     <nav>
         <div class="container">
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#progress">Progress</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">Mission</a></li>
+                <li><a href="#doomsday">Doomsday Clock</a></li>
+                <li><a href="#worldtime">World Time</a></li>
+                <li><a href="#monitoring">Monitoring</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -30,85 +34,135 @@
     
     <main class="container">
         <section id="about">
-            <h2>About</h2>
-            <p>Experienced systems administrator and network engineer specializing in 
-               infrastructure optimization, automation, and security solutions. 
-               Passionate about building reliable, scalable systems that drive 
-               business efficiency and growth.</p>
+            <h2>Observatory Mission</h2>
+            <p>EastsWay Observatory is a specialized monitoring station dedicated to tracking 
+               global phenomena and maintaining continuous surveillance of critical indicators 
+               that affect humanity's future. Our mission is to provide real-time analysis 
+               and early warning systems for various global threats and anomalies.</p>
             
-            <div class="skills">
-                <h3>Core Competencies</h3>
+            <div class="mission-goals">
+                <h3>Primary Objectives</h3>
                 <ul>
-                    <li>Network Infrastructure Design & Implementation</li>
-                    <li>Cloud Architecture & Migration</li>
-                    <li>DevOps & CI/CD Pipeline Development</li>
-                    <li>Security Hardening & Compliance</li>
-                    <li>Automation & Monitoring Solutions</li>
+                    <li>Continuous monitoring of global communication patterns</li>
+                    <li>Analysis of international tension levels</li>
+                    <li>Tracking of anomalous signal patterns</li>
+                    <li>Maintenance of temporal synchronization systems</li>
+                    <li>Documentation of critical threshold breaches</li>
                 </ul>
             </div>
         </section>
         
-        <section id="progress">
-            <h2>Current Goals & Progress</h2>
-            <div id="progress-container">
-                <div class="progress-item">
-                    <h4>Cloud Infrastructure Migration <span class="target">Q3 2025</span></h4>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 78%"></div>
+        <section id="doomsday">
+            <h2>Doomsday Clock</h2>
+            <div class="doomsday-container">
+                <div class="clock-face">
+                    <div class="clock-hand" id="doomsday-hand"></div>
+                    <div class="clock-numbers">
+                        <span class="twelve">12</span>
+                        <span class="six">6</span>
                     </div>
-                    <span class="progress-text">78%</span>
                 </div>
-                
-                <div class="progress-item">
-                    <h4>Network Automation Framework <span class="target">Q2 2025</span></h4>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 92%"></div>
-                    </div>
-                    <span class="progress-text">92%</span>
-                </div>
-                
-                <div class="progress-item">
-                    <h4>Security Compliance Audit <span class="target">Q4 2025</span></h4>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 65%"></div>
-                    </div>
-                    <span class="progress-text">65%</span>
-                </div>
-                
-                <div class="progress-item">
-                    <h4>CI/CD Pipeline Optimization <span class="target">Q3 2025</span></h4>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 84%"></div>
-                    </div>
-                    <span class="progress-text">84%</span>
+                <div class="clock-info">
+                    <p id="doomsday-time">Current Time: <span id="doomsday-display">23:58:20</span></p>
+                    <p class="clock-description">Minutes to midnight represent global catastrophe risk</p>
                 </div>
             </div>
         </section>
         
-        <section id="projects">
-            <h2>Recent Projects</h2>
-            <div id="repos-container">
-                <div class="loading">Loading projects from GitHub...</div>
+        <section id="worldtime">
+            <h2>Global Time Synchronization</h2>
+            <div class="time-zones">
+                <div class="time-zone">
+                    <h4>Greenwich Mean Time</h4>
+                    <div class="time-display" id="gmt-time">--:--:--</div>
+                </div>
+                <div class="time-zone">
+                    <h4>Moscow Time</h4>
+                    <div class="time-display" id="moscow-time">--:--:--</div>
+                </div>
+                <div class="time-zone">
+                    <h4>Washington DC</h4>
+                    <div class="time-display" id="washington-time">--:--:--</div>
+                </div>
+                <div class="time-zone">
+                    <h4>Beijing Time</h4>
+                    <div class="time-display" id="beijing-time">--:--:--</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="monitoring">
+            <h2>Real-Time Monitoring Systems</h2>
+            
+            <div class="monitoring-panel">
+                <div class="chart-container">
+                    <h3>Radio Communication Levels</h3>
+                    <canvas id="radioChart" width="400" height="200"></canvas>
+                    <div class="chart-legend">
+                        <span class="legend-item">
+                            <span class="legend-color" style="background: #00ff88;"></span>
+                            Normal Range
+                        </span>
+                        <span class="legend-item">
+                            <span class="legend-color" style="background: #ffaa00;"></span>
+                            Elevated
+                        </span>
+                        <span class="legend-item">
+                            <span class="legend-color" style="background: #ff4444;"></span>
+                            Critical
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Global Tension Index</h3>
+                    <canvas id="tensionChart" width="400" height="200"></canvas>
+                    <div class="chart-legend">
+                        <span class="legend-item">
+                            <span class="legend-color" style="background: #4488ff;"></span>
+                            Stability Level
+                        </span>
+                        <span class="legend-item">
+                            <span class="legend-color" style="background: #ff8844;"></span>
+                            Tension Spikes
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="status-indicators">
+                <div class="indicator">
+                    <div class="indicator-light" id="radio-status"></div>
+                    <span>Radio Monitoring</span>
+                </div>
+                <div class="indicator">
+                    <div class="indicator-light" id="tension-status"></div>
+                    <span>Tension Analysis</span>
+                </div>
+                <div class="indicator">
+                    <div class="indicator-light active" id="system-status"></div>
+                    <span>System Status</span>
+                </div>
             </div>
         </section>
         
         <section id="contact">
-            <h2>Contact</h2>
+            <h2>Observatory Contact</h2>
             <div class="contact-info">
-                <p><strong>Email:</strong> admin@eastsway.org</p>
-                <p><strong>Focus Areas:</strong> Network optimization, infrastructure automation, cloud solutions</p>
-                <p><strong>Available for:</strong> Consulting, system audits, infrastructure projects</p>
+                <p><strong>Station ID:</strong> EAST-001</p>
+                <p><strong>Primary Contact:</strong> station@eastsway.org</p>
+                <p><strong>Classification:</strong> Monitoring Station - Level 3</p>
+                <p><strong>Operational Status:</strong> 24/7 Continuous Monitoring</p>
             </div>
         </section>
     </main>
     
     <footer>
         <div class="container">
-            <p>&copy; 2025 EastsWay Solutions. All rights reserved.</p>
+            <p>&copy; 2025 EastsWay Observatory. Monitoring protocols active.</p>
         </div>
     </footer>
     
     <script src="assets/js/main.js"></script>
 </body>
 </html>
-
