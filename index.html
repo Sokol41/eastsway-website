@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Обратный отсчёт до куся!</title>
+  <title>До куся осталось</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     html, body {
@@ -12,24 +12,20 @@
     }
     body {
       min-height: 100vh;
-      background: radial-gradient(circle at center, #ffe0eb 0%, #ffb4e6 100%);
+      min-width: 100vw;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       position: relative;
       overflow: hidden;
-    }
-    .heart-bg {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      opacity: 0.11;
-      width: 84vw;
-      max-width: 700px;
-      z-index: 0;
-      pointer-events: none;
+      background: #ffe0eb;
+      /* Фон-гифка */
+      background-image: url('https://qna.center/storage/photos/dedyla60/75551.gif');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
     }
     .title {
       position: relative;
@@ -42,6 +38,10 @@
       margin-bottom: 38px;
       letter-spacing: 0.01em;
       text-align: center;
+      background: rgba(255,255,255,0.66);
+      border-radius: 0.8em;
+      padding: 0.2em 0.7em 0.15em 0.7em;
+      box-shadow: 0 1px 12px #fceefd;
     }
     .timer {
       position: relative;
@@ -56,47 +56,20 @@
       margin-bottom: 46px;
       letter-spacing: 0.05em;
     }
-    .cat-gif {
-      position: absolute;
-      bottom: 42px;
-      right: 34px;
-      width: 155px;
-      border-radius: 2em 2em 2em 2em / 3em 2em 1.7em 2em;
-      z-index: 4;
-      box-shadow: 0 5px 25px 0 #c86da957;
-      background: #fff;
-      padding: 6px;
-      display: block;
-    }
     @media (max-width: 600px) {
-      .timer { font-size: 1.9rem; padding: 14px 9px; }
-      .cat-gif { width: 88px; right: 6px; bottom: 6px;}
-      .title { font-size: 1.65rem; }
-      .heart-bg { width: 96vw; }
+      .timer { font-size: 1.5rem; padding: 12px 8px; }
+      .title { font-size: 1.2rem; }
     }
   </style>
 </head>
 <body>
-  <svg class="heart-bg" viewBox="0 0 120 100">
-    <path d="M10,30 
-        Q10,10 30,10 
-        Q50,10 50,30 
-        Q50,10 70,10 
-        Q110,10 110,30 
-        Q110,60 60,90 
-        Q10,60 10,30 
-        Z"
-        fill="#e573b1" />
-  </svg>
   <div class="title">До куся осталось</div>
   <div class="timer" id="countdown">
     10 дней 21 ч 1 мин
   </div>
-  <img class="cat-gif" src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" alt="Котик кусает" title="самый милый кусь"/>
   <script>
-    // deadline — рейс 30 июля 2025 00:00 по времени Камчатки
-    const deadline = new Date(Date.UTC(2025, 6, 30, 5, 30, 0)); // РЕАЛЬНО: 30 июля 17:30 по +12
-
+    // 30 июля 2025, 17:30 по Камчатке (UTC+12) — это 2025-07-30 05:30:00 UTC
+    const deadline = new Date(Date.UTC(2025, 6, 30, 5, 30, 0));
     function decl(n, w1, w2, w5) {
       n = Math.abs(n) % 100; const n1 = n % 10;
       if(n > 10 && n < 20) return w5;
@@ -111,7 +84,6 @@
       let hours = Math.floor(diff / (1000*60*60)) % 24;
       let mins = Math.floor(diff / (1000*60)) % 60;
       let secs = Math.floor(diff / 1000) % 60;
-
       document.getElementById('countdown').textContent =
         days + ' ' + decl(days, 'день', 'дня', 'дней') + ' '
         + hours + ' ч '
