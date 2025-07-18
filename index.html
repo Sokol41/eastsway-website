@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Катюша — кошечка</title>
+  <title>Обратный отсчёт до куся!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     html, body {
@@ -12,13 +12,12 @@
     }
     body {
       min-height: 100vh;
-      background: radial-gradient(ellipse at center, #ffe0eb 0%, #ffd6ec 100%);
-      background-repeat: no-repeat;
-      position: relative;
+      background: radial-gradient(circle at center, #ffe0eb 0%, #ffb4e6 100%);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
+      position: relative;
       overflow: hidden;
     }
     .heart-bg {
@@ -26,34 +25,54 @@
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-      opacity: 0.12;
-      width: 80vw;
-      max-width: 650px;
+      opacity: 0.11;
+      width: 84vw;
+      max-width: 700px;
       z-index: 0;
       pointer-events: none;
     }
-    .main-text {
+    .title {
       position: relative;
       z-index: 2;
-      font-family: 'Montserrat', 'Arial', sans-serif;
-      font-weight: bold;
-      font-size: 3.3rem;
       color: #e91e63;
+      font-size: 2.9rem;
+      font-weight: bold;
+      text-shadow: 0 2px 24px #fff8fd;
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin-bottom: 38px;
+      letter-spacing: 0.01em;
       text-align: center;
-      margin-bottom: 15px;
-      text-shadow: 1px 1px 12px #fff8fa, 0 4px 32px #e0b7f1;
-      line-height: 1.2;
     }
-    .cat-gif {
+    .timer {
       position: relative;
       z-index: 3;
-      display: block;
-      margin: 0 auto;
-      max-width: 370px;
-      box-shadow: 0 2px 44px 0 #681a4167;
-      border-radius: 1.5em;
+      background: #fff6faea;
+      border-radius: 1em;
+      padding: 24px 34px;
+      font-size: 2.5rem;
+      font-family: 'Fira Mono', Consolas, monospace;
+      color: #a61c5c;
+      box-shadow: 0 3px 32px #c86da957;
+      margin-bottom: 46px;
+      letter-spacing: 0.05em;
+    }
+    .cat-gif {
+      position: absolute;
+      bottom: 42px;
+      right: 34px;
+      width: 155px;
+      border-radius: 2em 2em 2em 2em / 3em 2em 1.7em 2em;
+      z-index: 4;
+      box-shadow: 0 5px 25px 0 #c86da957;
       background: #fff;
-      padding: 0.5em;
+      padding: 6px;
+      display: block;
+    }
+    @media (max-width: 600px) {
+      .timer { font-size: 1.9rem; padding: 14px 9px; }
+      .cat-gif { width: 88px; right: 6px; bottom: 6px;}
+      .title { font-size: 1.65rem; }
+      .heart-bg { width: 96vw; }
     }
   </style>
 </head>
@@ -69,11 +88,38 @@
         Z"
         fill="#e573b1" />
   </svg>
-  <div class="main-text">
-    Катюша – кошечка.<br>
-    Кусь!
+  <div class="title">До куся осталось</div>
+  <div class="timer" id="countdown">
+    10 дней 21 ч 1 мин
   </div>
-  <!-- Вставь сюда свою гифку котика! Ниже пример с публичной гифкой. -->
-  <img class="cat-gif" src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" alt="Анимированный котик кусает">
+  <img class="cat-gif" src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" alt="Котик кусает" title="самый милый кусь"/>
+  <script>
+    // deadline — рейс 30 июля 2025 00:00 по времени Камчатки
+    const deadline = new Date(Date.UTC(2025, 6, 29, 14, 0, 0)); // Камчатка UTC+12
+
+    function decl(n, w1, w2, w5) {
+      n = Math.abs(n) % 100; const n1 = n % 10;
+      if(n > 10 && n < 20) return w5;
+      if(n1 > 1 && n1 < 5) return w2;
+      if(n1 == 1) return w1;
+      return w5;
+    }
+    function updateTimer() {
+      const now = new Date();
+      let diff = Math.max(0, deadline - now);
+      let days = Math.floor(diff / (1000*60*60*24));
+      let hours = Math.floor(diff / (1000*60*60)) % 24;
+      let mins = Math.floor(diff / (1000*60)) % 60;
+      let secs = Math.floor(diff / 1000) % 60;
+
+      document.getElementById('countdown').textContent =
+        days + ' ' + decl(days, 'день', 'дня', 'дней') + ' '
+        + hours + ' ч '
+        + mins + ' мин '
+        + secs + ' сек';
+    }
+    setInterval(updateTimer, 1000);
+    updateTimer();
+  </script>
 </body>
 </html>
