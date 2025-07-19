@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Чистый Мир — профессиональная уборка</title>
+  <title>Pure Space — Professional Cleaning</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     html, body { margin:0; padding:0; min-height:100vh; font-family: 'Montserrat', Arial, sans-serif; background:#f5f6fa; }
@@ -42,7 +42,7 @@
     function sendForm(e){
       e.preventDefault();
       const form = e.target;
-      form.innerHTML='<p style="font-size:1.1rem;color:#1e6f58;text-align:center;margin:38px 0;">Спасибо! Ваша заявка отправлена.<br>Менеджер свяжется с вами в течение 10 минут.</p>';
+      form.innerHTML='<p style="font-size:1.1rem;color:#1e6f58;text-align:center;margin:38px 0;">Thank you! Your request has been sent.<br>Our manager will contact you within 10 minutes.</p>';
     }
   </script>
 </head>
@@ -50,115 +50,115 @@
   <header>
     <nav>
       <ul>
-        <li><a href="#main">Главная</a></li>
-        <li><a href="#services">Услуги</a></li>
-        <li><a href="#prices">Цены</a></li>
-        <li><a href="#about">О компании</a></li>
-        <li><a href="#reviews">Отзывы</a></li>
-        <li><a href="#contacts">Контакты</a></li>
+        <li><a href="#main">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#prices">Pricing</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contacts">Contacts</a></li>
       </ul>
-      <button class="main-callback-btn" onclick="window.scrollTo({top:document.getElementById('order-form').offsetTop-42,behavior:'smooth'});">Заказать звонок</button>
+      <button class="main-callback-btn" onclick="window.scrollTo({top:document.getElementById('order-form').offsetTop-42,behavior:'smooth'});">Request a Call</button>
     </nav>
   </header>
   <section class="banner" id="main">
-    <h1>“Чистый Мир” — клининг для дома и бизнеса</h1>
-    <p>Профессиональная уборка, химчистка и мойка окон.<br>Работаем 7 дней в неделю по всему городу.</p>
-    <button class="cta-btn" onclick="window.scrollTo({top:document.getElementById('order-form').offsetTop-62,behavior:'smooth'});">Быстрая заявка</button>
+    <h1>“Pure Space” — Cleaning for Home & Business</h1>
+    <p>Professional cleaning, upholstery steam cleaning, window washing.<br>Open every day across the city.</p>
+    <button class="cta-btn" onclick="window.scrollTo({top:document.getElementById('order-form').offsetTop-62,behavior:'smooth'});">Quick Request</button>
   </section>
 
   <section id="services">
     <div class="cards">
       <div class="service-card">
-        <h3>Уборка офиса</h3>
-        <p>Комплексная уборка офисов и бизнес-центров. Работа по графику или разово.</p>
+        <h3>Office Cleaning</h3>
+        <p>Comprehensive cleaning for offices and business centers. Regular or one-time visits.</p>
       </div>
       <div class="service-card">
-        <h3>Химчистка мебели</h3>
-        <p>Эко-средства, удаление пятен, выезд в любое время. Для офиса и дома!</p>
+        <h3>Upholstery Cleaning</h3>
+        <p>Eco-friendly products, stain removal, on-site service. For offices and homes.</p>
       </div>
       <div class="service-card">
-        <h3>Уборка после ремонта</h3>
-        <p>Удаляем строительную пыль, вывозим мусор, моем все поверхности “до блеска”.</p>
+        <h3>Post-Construction Cleaning</h3>
+        <p>Removal of construction debris, fine dust, and washing of all surfaces "until it shines".</p>
       </div>
       <div class="service-card">
-        <h3>Мытьё окон и витрин</h3>
-        <p>Используем проф. мойку, безопасный доступ, даже на высоте. Гарантия прозрачности!</p>
+        <h3>Window & Display Washing</h3>
+        <p>Professional equipment, safe access, even at height. Clarity guaranteed!</p>
       </div>
     </div>
   </section>
 
   <section id="order-form" class="order-form">
     <form onsubmit="sendForm(event)">
-      <h3>Закажите бесплатную консультацию</h3>
+      <h3>Request a Free Consultation</h3>
       <label>
-        Ваше имя:<br>
+        Your Name:<br>
         <input type="text" name="name" required>
       </label>
       <label>
-        Телефон:<br>
-        <input type="tel" name="phone" required placeholder="+7">
+        Phone:<br>
+        <input type="tel" name="phone" required placeholder="+1">
       </label>
       <label>
-        Услуга:<br>
+        Service:<br>
         <select name="service" required>
-          <option value="office">Уборка офиса</option>
-          <option value="home">Уборка квартиры</option>
-          <option value="window">Мойка окон</option>
-          <option value="other">Другая</option>
+          <option value="office">Office cleaning</option>
+          <option value="home">Home cleaning</option>
+          <option value="window">Window washing</option>
+          <option value="other">Other</option>
         </select>
       </label>
       <label>
         <input type="checkbox" name="accept" required>
-        Согласен на обработку персональных данных
+        I consent to the processing of personal data
       </label>
-      <button type="submit">Отправить</button>
+      <button type="submit">Submit</button>
     </form>
   </section>
 
   <section class="cards" id="about">
     <div class="service-card">
-      <h3>О компании</h3>
+      <h3>About Us</h3>
       <p>
-        Более 8 лет на рынке.<br/>
-        Сертифицированные специалисты.<br/>
-        820+ убранных объектов.<br/>
-        Работаем без выходных.
+        Over 8 years in business.<br/>
+        Certified specialists.<br/>
+        820+ objects cleaned.<br/>
+        7 days a week.<br/>
       </p>
     </div>
     <div class="service-card">
-      <h3>Наши принципы</h3>
+      <h3>Our Values</h3>
       <p>
-        — Оперативность<br/>
-        — Гарантия чистоты<br/>
-        — Безопасные эко-средства<br/>
-        — Командный контроль качества
+        — Efficiency<br/>
+        — Cleanliness guaranteed<br/>
+        — Eco-friendly solutions<br/>
+        — Team quality control
       </p>
     </div>
     <div class="service-card">
-      <h3>Отзывы</h3>
+      <h3>Reviews</h3>
       <p>
-        “Офис сияет!”<br>
-        “Быстрая химчистка дивана — спасибо!”<br>
-        “Лучшие цены за мойку окон.”
-        <br><a href="#">Все отзывы →</a>
+        “Our office sparkles!”<br>
+        “Fast upholstery cleaning — thank you!”<br>
+        “Best prices for window washing.”<br>
+        <a href="#">All reviews →</a>
       </p>
     </div>
     <div class="service-card">
-      <h3>Контакты</h3>
+      <h3>Contacts</h3>
       <p>
-        г. Санкт-Петербург<br/>
-        +7 (812) 333-22-11<br/>
-        info@cleandomir.ru<br/>
-        Ежедневно 8:00-21:30<br/>
-        <a href="#">Посмотреть на карте</a>
+        New York, NY<br/>
+        +1 (212) 555-2311<br/>
+        info@purespace.com<br/>
+        8:00–21:30, every day<br/>
+        <a href="#">View on map</a>
       </p>
     </div>
   </section>
 
   <footer class="footer">
-    ООО «Чистый Мир», ИНН 7811255212 <br>
-    © 2017–2025. Все права защищены. <br>
-    <a href="#">Политика конфиденциальности</a> | <a href="#">Оставить отзыв</a>
+    LLC “Pure Space”, EIN 00-1234567<br>
+    © 2017–2025. All rights reserved.<br>
+    <a href="#">Privacy Policy</a> | <a href="#">Leave a Review</a>
   </footer>
 </body>
 </html>
