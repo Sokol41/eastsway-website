@@ -2,96 +2,163 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>До куся осталось</title>
+  <title>Чистый Мир — профессиональная уборка</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      min-height: 100vh;
-      min-width: 100vw;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      background: #ffe0eb;
-      /* Фон-гифка */
-      background-image: url('https://qna.center/storage/photos/dedyla60/75551.gif');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center center;
-      background-attachment: fixed;
-    }
-    .title {
-      position: relative;
-      z-index: 2;
-      color: #e91e63;
-      font-size: 2.9rem;
-      font-weight: bold;
-      text-shadow: 0 2px 24px #fff8fd;
-      font-family: 'Montserrat', Arial, sans-serif;
-      margin-bottom: 38px;
-      letter-spacing: 0.01em;
-      text-align: center;
-      background: rgba(255,255,255,0.66);
-      border-radius: 0.8em;
-      padding: 0.2em 0.7em 0.15em 0.7em;
-      box-shadow: 0 1px 12px #fceefd;
-    }
-    .timer {
-      position: relative;
-      z-index: 3;
-      background: #fff6faea;
-      border-radius: 1em;
-      padding: 24px 34px;
-      font-size: 2.5rem;
-      font-family: 'Fira Mono', Consolas, monospace;
-      color: #a61c5c;
-      box-shadow: 0 3px 32px #c86da957;
-      margin-bottom: 46px;
-      letter-spacing: 0.05em;
-    }
-    @media (max-width: 600px) {
-      .timer { font-size: 1.5rem; padding: 12px 8px; }
-      .title { font-size: 1.2rem; }
+    html, body { margin:0; padding:0; min-height:100vh; font-family: 'Montserrat', Arial, sans-serif; background:#f5f6fa; }
+    header { background:linear-gradient(90deg,#e1a8f9,#67dbc5); color:#fff; padding:28px 0 20px 0; }
+    nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap:28px; justify-content: center; }
+    nav li { display:inline; }
+    nav a { color:#fff; text-decoration:none; font-weight:bold; font-size:1.1rem;}
+    .main-callback-btn { margin-left:32px; padding:11px 28px; border:none; background:#fff; color:#9e32ac; border-radius:32px; font-weight:700; font-size:1.09rem; cursor:pointer; transition:.2s;}
+    .main-callback-btn:hover { background:#ffe0fb; }
+    .banner { padding:44px 0 30px 0; background:#fff; border-bottom: 1px solid #ece2ef; text-align:center; }
+    .banner h1 { font-size:2.8rem; color:#9e32ac; margin-bottom:12px; }
+    .banner p { color:#643257; font-size:1.33rem; margin-bottom:28px; }
+    .cta-btn { background:#67dbc5; color:#fff; font-size:1.2rem; padding:13px 38px; border-radius:32px; border:none; cursor:pointer; font-weight:700; }
+    .cta-btn:hover { background:#4bc2aa; }
+    .cards { display:flex; flex-wrap:wrap; gap:26px; justify-content:center; margin:46px 0;}
+    .service-card { background:#fff; border-radius:22px; box-shadow:0 4px 32px #e5cdfb33; padding:34px 28px; max-width:280px; min-width:210px; flex:1 0 210px;}
+    .service-card h3 { margin:0 0 11px 0; color:#9e32ac; }
+    .service-card p { font-size:1.03rem; color:#705B75; margin:0; }
+    section, .cards { position:relative; z-index:2;}
+    .order-form { background:#fff3fe; margin:56px auto 38px auto; padding:32px 36px; border-radius:25px; box-shadow:0 4px 40px #e5cdfb40; max-width:420px;}
+    .order-form h3 { color:#9e32ac; text-align:center; margin-bottom:18px;}
+    .order-form label { display:block; margin-bottom:11px; color:#752479; }
+    .order-form input, .order-form select, .order-form textarea { width:99.7%; border:1px solid #ccc; border-radius:7px; padding:8px; font-family:inherit; margin-bottom:10px; }
+    .order-form input[type="checkbox"] { width:auto; }
+    .order-form button { background:#9e32ac; color:#fff; border:none; border-radius:8px; padding:11px 25px; font-size:1.12rem; font-weight:bold; cursor:pointer; }
+    .order-form button:hover { background:#67dbc5; color:#9322ae;}
+    .footer { background:#232133; color:#fffbea; font-size:0.97rem; text-align:center; padding:30px 0; margin-top:44px;}
+    .footer a { color:#67dbc5; text-decoration:none;}
+    @media (max-width:900px) {.cards{flex-direction:column;align-items:center;}}
+    @media (max-width:600px) {
+      .banner h1 {font-size:1.45rem;}
+      .main-callback-btn {display:none;}
+      .order-form {padding:14px 4vw;}
     }
   </style>
+  <script>
+    function sendForm(e){
+      e.preventDefault();
+      const form = e.target;
+      form.innerHTML='<p style="font-size:1.1rem;color:#1e6f58;text-align:center;margin:38px 0;">Спасибо! Ваша заявка отправлена.<br>Менеджер свяжется с вами в течение 10 минут.</p>';
+    }
+  </script>
 </head>
 <body>
-  <div class="title">До куся осталось</div>
-  <div class="timer" id="countdown">
-    10 дней 21 ч 1 мин
-  </div>
-  <script>
-    // 30 июля 2025, 17:30 по Камчатке (UTC+12) — это 2025-07-30 05:30:00 UTC
-    const deadline = new Date(Date.UTC(2025, 6, 30, 5, 30, 0));
-    function decl(n, w1, w2, w5) {
-      n = Math.abs(n) % 100; const n1 = n % 10;
-      if(n > 10 && n < 20) return w5;
-      if(n1 > 1 && n1 < 5) return w2;
-      if(n1 == 1) return w1;
-      return w5;
-    }
-    function updateTimer() {
-      const now = new Date();
-      let diff = Math.max(0, deadline - now);
-      let days = Math.floor(diff / (1000*60*60*24));
-      let hours = Math.floor(diff / (1000*60*60)) % 24;
-      let mins = Math.floor(diff / (1000*60)) % 60;
-      let secs = Math.floor(diff / 1000) % 60;
-      document.getElementById('countdown').textContent =
-        days + ' ' + decl(days, 'день', 'дня', 'дней') + ' '
-        + hours + ' ч '
-        + mins + ' мин '
-        + secs + ' сек';
-    }
-    setInterval(updateTimer, 1000);
-    updateTimer();
-  </script>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#main">Главная</a></li>
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#prices">Цены</a></li>
+        <li><a href="#about">О компании</a></li>
+        <li><a href="#reviews">Отзывы</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+      <button class="main-callback-btn" onclick="window.scrollTo({top:document.getElementById('order-form').offsetTop-42,behavior:'smooth'});">Заказать звонок</button>
+    </nav>
+  </header>
+  <section class="banner" id="main">
+    <h1>“Чистый Мир” — клининг для дома и бизнеса</h1>
+    <p>Профессиональная уборка, химчистка и мойка окон.<br>Работаем 7 дней в неделю по всему городу.</p>
+    <button class="cta-btn" onclick="window.scrollTo({top:document.getElementById('order-form').offsetTop-62,behavior:'smooth'});">Быстрая заявка</button>
+  </section>
+
+  <section id="services">
+    <div class="cards">
+      <div class="service-card">
+        <h3>Уборка офиса</h3>
+        <p>Комплексная уборка офисов и бизнес-центров. Работа по графику или разово.</p>
+      </div>
+      <div class="service-card">
+        <h3>Химчистка мебели</h3>
+        <p>Эко-средства, удаление пятен, выезд в любое время. Для офиса и дома!</p>
+      </div>
+      <div class="service-card">
+        <h3>Уборка после ремонта</h3>
+        <p>Удаляем строительную пыль, вывозим мусор, моем все поверхности “до блеска”.</p>
+      </div>
+      <div class="service-card">
+        <h3>Мытьё окон и витрин</h3>
+        <p>Используем проф. мойку, безопасный доступ, даже на высоте. Гарантия прозрачности!</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="order-form" class="order-form">
+    <form onsubmit="sendForm(event)">
+      <h3>Закажите бесплатную консультацию</h3>
+      <label>
+        Ваше имя:<br>
+        <input type="text" name="name" required>
+      </label>
+      <label>
+        Телефон:<br>
+        <input type="tel" name="phone" required placeholder="+7">
+      </label>
+      <label>
+        Услуга:<br>
+        <select name="service" required>
+          <option value="office">Уборка офиса</option>
+          <option value="home">Уборка квартиры</option>
+          <option value="window">Мойка окон</option>
+          <option value="other">Другая</option>
+        </select>
+      </label>
+      <label>
+        <input type="checkbox" name="accept" required>
+        Согласен на обработку персональных данных
+      </label>
+      <button type="submit">Отправить</button>
+    </form>
+  </section>
+
+  <section class="cards" id="about">
+    <div class="service-card">
+      <h3>О компании</h3>
+      <p>
+        Более 8 лет на рынке.<br/>
+        Сертифицированные специалисты.<br/>
+        820+ убранных объектов.<br/>
+        Работаем без выходных.
+      </p>
+    </div>
+    <div class="service-card">
+      <h3>Наши принципы</h3>
+      <p>
+        — Оперативность<br/>
+        — Гарантия чистоты<br/>
+        — Безопасные эко-средства<br/>
+        — Командный контроль качества
+      </p>
+    </div>
+    <div class="service-card">
+      <h3>Отзывы</h3>
+      <p>
+        “Офис сияет!”<br>
+        “Быстрая химчистка дивана — спасибо!”<br>
+        “Лучшие цены за мойку окон.”
+        <br><a href="#">Все отзывы →</a>
+      </p>
+    </div>
+    <div class="service-card">
+      <h3>Контакты</h3>
+      <p>
+        г. Санкт-Петербург<br/>
+        +7 (812) 333-22-11<br/>
+        info@cleandomir.ru<br/>
+        Ежедневно 8:00-21:30<br/>
+        <a href="#">Посмотреть на карте</a>
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    ООО «Чистый Мир», ИНН 7811255212 <br>
+    © 2017–2025. Все права защищены. <br>
+    <a href="#">Политика конфиденциальности</a> | <a href="#">Оставить отзыв</a>
+  </footer>
 </body>
 </html>
