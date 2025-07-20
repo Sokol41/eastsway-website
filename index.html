@@ -2,163 +2,122 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Pure Space — Professional Cleaning</title>
+  <title>Access Denied</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    html, body { margin:0; padding:0; min-height:100vh; font-family: 'Montserrat', Arial, sans-serif; background:#f5f6fa; }
-    header { background:linear-gradient(90deg,#e1a8f9,#67dbc5); color:#fff; padding:28px 0 20px 0; }
-    nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap:28px; justify-content: center; }
-    nav li { display:inline; }
-    nav a { color:#fff; text-decoration:none; font-weight:bold; font-size:1.1rem;}
-    .main-callback-btn { margin-left:32px; padding:11px 28px; border:none; background:#fff; color:#9e32ac; border-radius:32px; font-weight:700; font-size:1.09rem; cursor:pointer; transition:.2s;}
-    .main-callback-btn:hover { background:#ffe0fb; }
-    .banner { padding:44px 0 30px 0; background:#fff; border-bottom: 1px solid #ece2ef; text-align:center; }
-    .banner h1 { font-size:2.8rem; color:#9e32ac; margin-bottom:12px; }
-    .banner p { color:#643257; font-size:1.33rem; margin-bottom:28px; }
-    .cta-btn { background:#67dbc5; color:#fff; font-size:1.2rem; padding:13px 38px; border-radius:32px; border:none; cursor:pointer; font-weight:700; }
-    .cta-btn:hover { background:#4bc2aa; }
-    .cards { display:flex; flex-wrap:wrap; gap:26px; justify-content:center; margin:46px 0;}
-    .service-card { background:#fff; border-radius:22px; box-shadow:0 4px 32px #e5cdfb33; padding:34px 28px; max-width:280px; min-width:210px; flex:1 0 210px;}
-    .service-card h3 { margin:0 0 11px 0; color:#9e32ac; }
-    .service-card p { font-size:1.03rem; color:#705B75; margin:0; }
-    section, .cards { position:relative; z-index:2;}
-    .order-form { background:#fff3fe; margin:56px auto 38px auto; padding:32px 36px; border-radius:25px; box-shadow:0 4px 40px #e5cdfb40; max-width:420px;}
-    .order-form h3 { color:#9e32ac; text-align:center; margin-bottom:18px;}
-    .order-form label { display:block; margin-bottom:11px; color:#752479; }
-    .order-form input, .order-form select, .order-form textarea { width:99.7%; border:1px solid #ccc; border-radius:7px; padding:8px; font-family:inherit; margin-bottom:10px; }
-    .order-form input[type="checkbox"] { width:auto; }
-    .order-form button { background:#9e32ac; color:#fff; border:none; border-radius:8px; padding:11px 25px; font-size:1.12rem; font-weight:bold; cursor:pointer; }
-    .order-form button:hover { background:#67dbc5; color:#9322ae;}
-    .footer { background:#232133; color:#fffbea; font-size:0.97rem; text-align:center; padding:30px 0; margin-top:44px;}
-    .footer a { color:#67dbc5; text-decoration:none;}
-    @media (max-width:900px) {.cards{flex-direction:column;align-items:center;}}
+    html, body {
+      height: 100%; margin: 0; padding: 0; 
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+      background: #151012 url('https://png.pngtree.com/png-vector/20190905/ourmid/pngtree-black-iron-background-metal-texture-dark-png-image_1716098.jpg') repeat;
+    }
+    body {
+      display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; overflow: hidden;
+    }
+    .wings-bg {
+      position: absolute;
+      left: 50%; top: 44%;
+      width: 750px; max-width: 95vw;
+      opacity: 0.26; z-index: 0;
+      pointer-events: none;
+      transform: translate(-50%, -50%) scaleY(-1) rotate(-5deg);
+      mix-blend-mode: lighten;
+    }
+    .login-panel {
+      position: relative;
+      z-index: 2;
+      background: linear-gradient(135deg, #1a060bbd 60%, #490617ee 100%);
+      border-radius: 24px;
+      box-shadow: 0 4px 44px #ff2e4a55;
+      padding: 44px 38px 28px 38px;
+      min-width: 340px; max-width: 98vw;
+      border: 2px solid #b51235b9;
+      margin-top: 18vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .panel-heading {
+      color: #ff2236;
+      text-shadow: 0 2px 18px #591012;
+      font-size: 1.45rem;
+      letter-spacing: .03em;
+      font-weight: bold;
+      margin-bottom: 33px;
+      text-align: center;
+      text-transform: uppercase;
+      background: linear-gradient(90deg,#ff193a 65%,#faecec14 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .login-form label {
+      display: block; margin-bottom: 8px; color: #e6c9d2; font-size: 1rem; font-weight: 500;
+    }
+    .login-form input {
+      width: 100%; border: 1px solid #651221cf;
+      border-radius: 7px; padding: 10px 11px;
+      margin-bottom: 18px; background: #201417; color: #ffe9e9;
+      font-size: 1.08rem; outline: none;
+      box-shadow: 0 2px 11px #48121919 inset;
+      transition: border .2s;
+    }
+    .login-form input:focus { border: 1.25px solid #ff3f5b; }
+    .login-form button {
+      width: 100%; border: none;
+      padding: 13px; border-radius: 8px;
+      background: linear-gradient(90deg,#ff2236 60%,#ad2349 100%);
+      color: #fff; font-size: 1.13rem; font-weight: bold;
+      letter-spacing: 0.06em; cursor: pointer;
+      box-shadow: 0 2px 24px #c9344b90;
+      transition: background 0.14s;
+      margin-top: 12px;
+    }
+    .login-form button:hover {
+      background: linear-gradient(90deg,#ff2236 40%,#ff2236 100%);
+    }
+    .login-form .input-icon {
+      position: absolute;
+      left: 13px; top: 9px; width: 18px; opacity: .25;
+    }
+    .login-info {
+      color: #e77585; font-size: .99rem;
+      margin-top: 24px; text-align: center;
+      font-family: monospace;
+    }
     @media (max-width:600px) {
-      .banner h1 {font-size:1.45rem;}
-      .main-callback-btn {display:none;}
-      .order-form {padding:14px 4vw;}
+      .login-panel { min-width:unset; padding: 20px 3vw; }
+      .wings-bg { width: 95vw; }
     }
   </style>
-  <script>
-    function sendForm(e){
-      e.preventDefault();
-      const form = e.target;
-      form.innerHTML='<p style="font-size:1.1rem;color:#1e6f58;text-align:center;margin:38px 0;">Thank you! Your request has been sent.<br>Our manager will contact you within 10 minutes.</p>';
-    }
-  </script>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#main">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#prices">Pricing</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#contacts">Contacts</a></li>
-      </ul>
-      <button class="main-callback-btn" onclick="window.scrollTo({top:document.getElementById('order-form').offsetTop-42,behavior:'smooth'});">Request a Call</button>
-    </nav>
-  </header>
-  <section class="banner" id="main">
-    <h1>“Pure Space” — Cleaning for Home & Business</h1>
-    <p>Professional cleaning, upholstery steam cleaning, window washing.<br>Open every day across the city.</p>
-    <button class="cta-btn" onclick="window.scrollTo({top:document.getElementById('order-form').offsetTop-62,behavior:'smooth'});">Quick Request</button>
-  </section>
-
-  <section id="services">
-    <div class="cards">
-      <div class="service-card">
-        <h3>Office Cleaning</h3>
-        <p>Comprehensive cleaning for offices and business centers. Regular or one-time visits.</p>
-      </div>
-      <div class="service-card">
-        <h3>Upholstery Cleaning</h3>
-        <p>Eco-friendly products, stain removal, on-site service. For offices and homes.</p>
-      </div>
-      <div class="service-card">
-        <h3>Post-Construction Cleaning</h3>
-        <p>Removal of construction debris, fine dust, and washing of all surfaces "until it shines".</p>
-      </div>
-      <div class="service-card">
-        <h3>Window & Display Washing</h3>
-        <p>Professional equipment, safe access, even at height. Clarity guaranteed!</p>
-      </div>
+  <img class="wings-bg" src="https://pngimg.com/uploads/angel_wings/angel_wings_PNG32.png" alt="wings background">
+  <div class="login-panel">
+    <div class="panel-heading">
+      Unauthorized access prohibited.<br>
+      Intruders are not welcome.
     </div>
-  </section>
-
-  <section id="order-form" class="order-form">
-    <form onsubmit="sendForm(event)">
-      <h3>Request a Free Consultation</h3>
-      <label>
-        Your Name:<br>
-        <input type="text" name="name" required>
-      </label>
-      <label>
-        Phone:<br>
-        <input type="tel" name="phone" required placeholder="+1">
-      </label>
-      <label>
-        Service:<br>
-        <select name="service" required>
-          <option value="office">Office cleaning</option>
-          <option value="home">Home cleaning</option>
-          <option value="window">Window washing</option>
-          <option value="other">Other</option>
-        </select>
-      </label>
-      <label>
-        <input type="checkbox" name="accept" required>
-        I consent to the processing of personal data
-      </label>
-      <button type="submit">Submit</button>
+    <form class="login-form" autocomplete="off" onsubmit="fakeLogin(event)">
+      <label for="user">Username or email</label>
+      <input type="text" id="user" name="user" required autocomplete="off" spellcheck="false">
+      <label for="pass">Password</label>
+      <input type="password" id="pass" name="pass" required autocomplete="off">
+      <button type="submit">Sign In</button>
     </form>
-  </section>
-
-  <section class="cards" id="about">
-    <div class="service-card">
-      <h3>About Us</h3>
-      <p>
-        Over 8 years in business.<br/>
-        Certified specialists.<br/>
-        820+ objects cleaned.<br/>
-        7 days a week.<br/>
-      </p>
+    <div class="login-info">
+      All actions are logged.<br>Unwelcome attempts may be reported.
     </div>
-    <div class="service-card">
-      <h3>Our Values</h3>
-      <p>
-        — Efficiency<br/>
-        — Cleanliness guaranteed<br/>
-        — Eco-friendly solutions<br/>
-        — Team quality control
-      </p>
-    </div>
-    <div class="service-card">
-      <h3>Reviews</h3>
-      <p>
-        “Our office sparkles!”<br>
-        “Fast upholstery cleaning — thank you!”<br>
-        “Best prices for window washing.”<br>
-        <a href="#">All reviews →</a>
-      </p>
-    </div>
-    <div class="service-card">
-      <h3>Contacts</h3>
-      <p>
-        New York, NY<br/>
-        +1 (212) 555-2311<br/>
-        info@purespace.com<br/>
-        8:00–21:30, every day<br/>
-        <a href="#">View on map</a>
-      </p>
-    </div>
-  </section>
-
-  <footer class="footer">
-    LLC “Pure Space”, EIN 00-1234567<br>
-    © 2017–2025. All rights reserved.<br>
-    <a href="#">Privacy Policy</a> | <a href="#">Leave a Review</a>
-  </footer>
+  </div>
+  <script>
+    function fakeLogin(e) {
+      e.preventDefault();
+      const form = e.target;
+      form.querySelector("button").disabled = true;
+      setTimeout(() => {
+        form.querySelector("button").disabled = false;
+        alert("Access denied.\nUnauthorized users are not permitted.");
+      }, 800);
+    }
+  </script>
 </body>
 </html>
